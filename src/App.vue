@@ -1,7 +1,7 @@
 <script setup>
 import { RouterView } from 'vue-router'
-import NavBar from './components/NavBar.vue'
-import NavRail from './components/NavRail.vue'
+import NavBar from '@/components/nav/NavBar.vue'
+import NavRail from '@/components/nav/NavRail.vue'
 
 import { useBreakpoints } from '@vueuse/core'
 
