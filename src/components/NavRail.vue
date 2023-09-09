@@ -56,6 +56,12 @@ nav {
     transform 0.5s ease;
 }
 
+.nav-icon:hover {
+  color: var(--md-sys-color-on-secondary);
+  background-color: var(--md-sys-color-secondary);
+  transform: scale(1.08);
+}
+
 .nav-icon.selected {
   color: var(--md-sys-color-on-primary);
   background-color: var(--md-sys-color-primary);
