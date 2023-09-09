@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 
 :root {
   /* light */
   --md-sys-color-primary-light: #006b57;
   --md-sys-color-on-primary-light: #ffffff;
-  --md-sys-color-primary-container-light: #7cf8d6;
+  --md-sys-color-primary-container-light: #71c6ae;
   --md-sys-color-on-primary-container-light: #002019;
   --md-sys-color-secondary-light: #4b635b;
   --md-sys-color-on-secondary-light: #ffffff;
