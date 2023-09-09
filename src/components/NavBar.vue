@@ -2,6 +2,7 @@
 import HomeIcon from './icons/IconHome.vue'
 import ProfileIcon from './icons/IconProfile.vue'
 import ProjectIcon from './icons/IconProject.vue'
+import ArticleIcon from './icons/IconArticle.vue'
 import ContactIcon from './icons/IconContact.vue'
 </script>
 
@@ -16,6 +17,9 @@ import ContactIcon from './icons/IconContact.vue'
       </RouterLink>
       <RouterLink to="/works">
         <ProjectIcon class="nav-icon" :class="{ selected: $route.name == 'works' }" />
+      </RouterLink>
+      <RouterLink to="/articles">
+        <ArticleIcon class="nav-icon" :class="{ selected: $route.name == 'articles' }" />
       </RouterLink>
     </div>
     <button>
