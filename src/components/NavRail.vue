@@ -7,49 +7,52 @@ import ContactIcon from './icons/IconContact.vue'
 </script>
 
 <template>
-  <nav>
-    <div class="nav-icon-container">
+  <nav
+    class="rounded-rect surface"
+    style="
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      align-items: center;
+      padding: 12px;
+      margin: 12px;
+    "
+  >
+    <div style="display: flex; flex-direction: column; gap: 8px">
       <RouterLink to="/">
-        <HomeIcon class="nav-icon" :class="{ selected: $route.name == 'home' }" />
+        <HomeIcon
+          class="nav-icon on-surface-text rounded-rect"
+          :class="{ selected: $route.name == 'home' }"
+        />
       </RouterLink>
       <RouterLink to="/profile">
-        <ProfileIcon class="nav-icon" :class="{ selected: $route.name == 'profile' }" />
+        <ProfileIcon
+          class="nav-icon on-surface-text rounded-rect"
+          :class="{ selected: $route.name == 'profile' }"
+        />
       </RouterLink>
       <RouterLink to="/works">
-        <ProjectIcon class="nav-icon" :class="{ selected: $route.name == 'works' }" />
+        <ProjectIcon
+          class="nav-icon on-surface-text rounded-rect"
+          :class="{ selected: $route.name == 'works' }"
+        />
       </RouterLink>
       <RouterLink to="/articles">
-        <ArticleIcon class="nav-icon" :class="{ selected: $route.name == 'articles' }" />
+        <ArticleIcon
+          class="nav-icon on-surface-text rounded-rect"
+          :class="{ selected: $route.name == 'articles' }"
+        />
       </RouterLink>
     </div>
-    <button><ContactIcon style="width: 20px; height: 20px;" /></button>
+    <button><ContactIcon style="width: 20px; height: 20px" /></button>
   </nav>
 </template>
 
 <style scoped>
-nav {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  align-items: center;
-  padding: 12px;
-  margin: 12px;
-  border-radius: 12px;
-  background-color: var(--md-sys-color-surface-variant);
-}
-
-.nav-icon-container {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
 .nav-icon {
   width: 38px;
   height: 38px;
   padding: 6px;
-  color: var(--md-sys-color-on-surface);
-  border-radius: 20%;
   transition:
     color 0.5s ease,
     background-color 0.5s ease,

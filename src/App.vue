@@ -5,8 +5,8 @@ import NavRail from './components/NavRail.vue'
 
 import { useBreakpoints } from '@vueuse/core'
 
-const wideBreakpoint = "768px"
-const breakpoints = useBreakpoints({"wideBreakpoint": wideBreakpoint})
+const wideBreakpoint = '768px'
+const breakpoints = useBreakpoints({ wideBreakpoint: wideBreakpoint })
 const isWide = breakpoints.greater('wideBreakpoint')
 </script>
 
@@ -14,7 +14,7 @@ const isWide = breakpoints.greater('wideBreakpoint')
   <div class="wrapper">
     <header v-if="!isWide"><NavBar /></header>
     <NavRail v-if="isWide" />
-    <main><RouterView /></main>
+    <main style="flex: 1"><RouterView /></main>
   </div>
 </template>
 

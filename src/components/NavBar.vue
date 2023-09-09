@@ -7,19 +7,40 @@ import ContactIcon from './icons/IconContact.vue'
 </script>
 
 <template>
-  <nav>
-    <div class="nav-icon-container">
+  <nav
+    class="rounded-rect surface"
+    style="
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 6px;
+      margin: 8px;
+    "
+  >
+    <div style="display: flex; gap: 8px">
       <RouterLink to="/">
-        <HomeIcon class="nav-icon" :class="{ selected: $route.name == 'home' }" />
+        <HomeIcon
+          class="nav-icon on-surface-text rounded-rect"
+          :class="{ selected: $route.name == 'home' }"
+        />
       </RouterLink>
       <RouterLink to="/profile">
-        <ProfileIcon class="nav-icon" :class="{ selected: $route.name == 'profile' }" />
+        <ProfileIcon
+          class="nav-icon on-surface-text rounded-rect"
+          :class="{ selected: $route.name == 'profile' }"
+        />
       </RouterLink>
       <RouterLink to="/works">
-        <ProjectIcon class="nav-icon" :class="{ selected: $route.name == 'works' }" />
+        <ProjectIcon
+          class="nav-icon on-surface-text rounded-rect"
+          :class="{ selected: $route.name == 'works' }"
+        />
       </RouterLink>
       <RouterLink to="/articles">
-        <ArticleIcon class="nav-icon" :class="{ selected: $route.name == 'articles' }" />
+        <ArticleIcon
+          class="nav-icon on-surface-text rounded-rect"
+          :class="{ selected: $route.name == 'articles' }"
+        />
       </RouterLink>
     </div>
     <button>
@@ -30,27 +51,10 @@ import ContactIcon from './icons/IconContact.vue'
 </template>
 
 <style scoped>
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 6px;
-  margin: 8px;
-  border-radius: 8px;
-  background-color: var(--md-sys-color-surface-variant);
-}
-
-.nav-icon-container {
-  display: flex;
-  gap: 8px;
-}
-
 .nav-icon {
   width: 36px;
   height: 36px;
   padding: 6px;
-  color: var(--md-sys-color-on-surface);
-  border-radius: 20%;
   transition:
     color 0.5s ease,
     background-color 0.5s ease,
