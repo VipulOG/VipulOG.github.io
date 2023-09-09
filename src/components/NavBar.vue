@@ -46,7 +46,7 @@ nav {
   height: 36px;
   padding: 6px;
   color: var(--md-sys-color-on-surface);
-  border-radius: 100%;
+  border-radius: 20%;
   transition:
     color 0.5s ease,
     background-color 0.5s ease,
