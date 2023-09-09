@@ -1,7 +1,7 @@
 <script setup>
 import HomeIcon from './icons/IconHome.vue'
 import ProfileIcon from './icons/IconProfile.vue'
-import ProjectsIcon from './icons/IconProjects.vue'
+import ProjectIcon from './icons/IconProject.vue'
 import ContactIcon from './icons/IconContact.vue'
 </script>
 
@@ -15,7 +15,7 @@ import ContactIcon from './icons/IconContact.vue'
         <ProfileIcon class="nav-icon" :class="{ selected: $route.name == 'profile' }" />
       </RouterLink>
       <RouterLink to="/works">
-        <ProjectsIcon class="nav-icon" :class="{ selected: $route.name == 'works' }" />
+        <ProjectIcon class="nav-icon" :class="{ selected: $route.name == 'works' }" />
       </RouterLink>
     </div>
     <button>
