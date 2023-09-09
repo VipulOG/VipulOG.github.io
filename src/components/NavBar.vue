@@ -7,16 +7,7 @@ import ContactIcon from './icons/IconContact.vue'
 </script>
 
 <template>
-  <nav
-    class="rounded-rect surface"
-    style="
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 6px;
-      margin: 8px;
-    "
-  >
+  <nav class="rounded-rect surface nav-container">
     <div style="display: flex; gap: 8px">
       <RouterLink to="/">
         <HomeIcon
@@ -51,6 +42,13 @@ import ContactIcon from './icons/IconContact.vue'
 </template>
 
 <style scoped>
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px;
+}
+
 .nav-icon {
   width: 36px;
   height: 36px;

@@ -12,8 +12,8 @@ const isWide = breakpoints.greater('wideBreakpoint')
 
 <template>
   <div :class="{ 'wide-layout': isWide }">
-    <header v-if="!isWide"><NavBar /></header>
-    <NavRail v-if="isWide" />
+    <header v-if="!isWide"><NavBar style="margin: 8px" /></header>
+    <NavRail v-if="isWide" style="margin: 12px" />
     <main style="flex: 1"><RouterView /></main>
   </div>
 </template>
