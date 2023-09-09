@@ -3,11 +3,11 @@ import { RouterView } from 'vue-router'
 import NavBar from './components/NavBar.vue'
 import NavRail from './components/NavRail.vue'
 
-import { useBreakpoints, breakpointsTailwind } from '@vueuse/core'
+import { useBreakpoints } from '@vueuse/core'
 
-const breakpoints = useBreakpoints(breakpointsTailwind)
-
-const isWide = breakpoints.greater('md')
+const wideBreakpoint = "768px"
+const breakpoints = useBreakpoints({"wideBreakpoint": wideBreakpoint})
+const isWide = breakpoints.greater('wideBreakpoint')
 </script>
 
 <template>
@@ -19,7 +19,7 @@ const isWide = breakpoints.greater('md')
 </template>
 
 <style scoped>
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   .wrapper {
     display: flex;
     height: 100vh;
