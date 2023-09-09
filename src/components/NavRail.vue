@@ -22,7 +22,7 @@ import ContactIcon from './icons/IconContact.vue'
         <ArticleIcon class="nav-icon" :class="{ selected: $route.name == 'articles' }" />
       </RouterLink>
     </div>
-    <button><ContactIcon style="width: 16px; height: 16px;" /></button>
+    <button><ContactIcon style="width: 20px; height: 20px;" /></button>
   </nav>
 </template>
 
@@ -32,9 +32,9 @@ nav {
   justify-content: space-between;
   flex-direction: column;
   align-items: center;
-  padding: 6px;
-  margin: 8px;
-  border-radius: 8px;
+  padding: 12px;
+  margin: 12px;
+  border-radius: 12px;
   background-color: var(--md-sys-color-surface-variant);
 }
 
@@ -45,8 +45,8 @@ nav {
 }
 
 .nav-icon {
-  width: 36px;
-  height: 36px;
+  width: 38px;
+  height: 38px;
   padding: 6px;
   color: var(--md-sys-color-on-surface);
   border-radius: 20%;
