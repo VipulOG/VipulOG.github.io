@@ -2,7 +2,7 @@
 import HomeIcon from '@/components/icons/IconHome.vue'
 import ProfileIcon from '@/components/icons/IconProfile.vue'
 import ProjectIcon from '@/components/icons/IconProject.vue'
-import ArticleIcon from '@/components/icons/IconArticle.vue'
+import BlogIcon from '@/components/icons/IconBlog.vue'
 </script>
 
 <template>
@@ -24,10 +24,10 @@ import ArticleIcon from '@/components/icons/IconArticle.vue'
       :class="{ selected: $route.name == 'works' }"
     />
   </RouterLink>
-  <RouterLink to="/articles" class="no-lh">
-    <ArticleIcon
+  <RouterLink to="/Blogs" class="no-lh">
+    <BlogIcon
       class="nav-icon on-surface-text rounded-rect"
-      :class="{ selected: $route.name == 'articles' }"
+      :class="{ selected: $route.name == 'blogs' }"
     />
   </RouterLink>
 </template>
