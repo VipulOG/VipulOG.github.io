@@ -8,10 +8,16 @@ const isWideDisplay = inject('isWideDisplay')
 </script>
 
 <template>
-  <div class="home-view" :class="{ 'wide-view': isWideDisplay }">
-    <ProfileSmall class="item" :class="{ 'wide-item': isWideDisplay }" />
-    <ProjectsSmall class="item" :class="{ 'wide-item': isWideDisplay }" />
-    <BlogsSmall class="item" :class="{ 'wide-item': isWideDisplay }" />
+  <div style="display: flex; justify-content: center">
+    <div class="home-view" :class="{ 'wide-view': isWideDisplay }">
+      <ProfileSmall
+        class="item"
+        :class="{ 'wide-view-item': isWideDisplay }"
+        style="grid-column: span 2"
+      />
+      <ProjectsSmall class="item" :class="{ 'wide-view-item': isWideDisplay }" />
+      <BlogsSmall class="item" :class="{ 'wide-view-item': isWideDisplay }" />
+    </div>
   </div>
 </template>
 
@@ -25,11 +31,15 @@ const isWideDisplay = inject('isWideDisplay')
   margin: 0px 8px 8px 8px;
 }
 
-.wide-view {
-  flex-direction: row;
+.wide-view-item {
+  margin: auto;
 }
 
-.wide-item {
+.wide-view {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
   margin: 12px 12px 12px 0px;
+  max-width: 800px;
 }
 </style>
