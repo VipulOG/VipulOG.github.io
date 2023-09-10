@@ -24,6 +24,5 @@ provide('isWideDisplay', isWideDisplay)
 .wide-layout {
   display: flex;
   height: 100vh;
-  overflow: hidden;
 }
 </style>
