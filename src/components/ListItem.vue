@@ -10,7 +10,7 @@ function itemClick() {
 </script>
 
 <template>
-  <StyledCard variant class="item-container" @click="itemClick">
+  <StyledCard scheme="surface-variant" class="item-container" @click="itemClick">
     <div style="display: flex; gap: 12px">
       <img :src="props.img" width="50" height="50" style="object-fit: cover" class="rounded-rect" />
       <div>
