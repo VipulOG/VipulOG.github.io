@@ -12,17 +12,29 @@ const isWideDisplay = breakpoints.greater('wideBreakpoint')
 provide('isWideDisplay', isWideDisplay)
 </script>
 
+
 <template>
-  <div :class="{ 'wide-layout': isWideDisplay }">
-    <header v-if="!isWideDisplay"><NavBar style="margin: 8px" /></header>
-    <NavRail v-if="isWideDisplay" style="margin: 12px" />
-    <main style="flex: 1; overflow-y: auto"><RouterView /></main>
+  <div :class="['flex', isWideDisplay ? 'row' : 'col']">
+    <NavBar v-if="!isWideDisplay" style="margin: 8px" />
+    <NavRail v-else style="margin: 12px" />
+    <main style="flex: 1; overflow-y: auto">
+      <RouterView />
+    </main>
   </div>
 </template>
 
+
 <style scoped>
-.wide-layout {
+.flex {
   display: flex;
   height: 100vh;
+}
+
+.row {
+  flex-direction: row;
+}
+
+.col {
+  flex-direction: column;
 }
 </style>
