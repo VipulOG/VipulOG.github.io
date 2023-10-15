@@ -2,6 +2,7 @@
 import { RouterView } from 'vue-router'
 import NavBar from '@/components/nav/NavBar.vue'
 import NavRail from '@/components/nav/NavRail.vue'
+import BgParticles from '@/components/BgParticles.vue'
 
 import { useBreakpoints } from '@vueuse/core'
 import { provide } from 'vue'
@@ -12,7 +13,6 @@ const isWideDisplay = breakpoints.greater('wideBreakpoint')
 provide('isWideDisplay', isWideDisplay)
 </script>
 
-
 <template>
   <div :class="['flex', isWideDisplay ? 'row' : 'col']">
     <NavBar v-if="!isWideDisplay" style="margin: 8px" />
@@ -20,9 +20,9 @@ provide('isWideDisplay', isWideDisplay)
     <main style="flex: 1; overflow-y: auto">
       <RouterView />
     </main>
+    <BgParticles></BgParticles>
   </div>
 </template>
-
 
 <style scoped>
 .flex {
