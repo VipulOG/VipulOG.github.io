@@ -8,10 +8,7 @@ import StyledCard from '../StyledCard.vue'
   <StyledCard padding="s">
     <nav class="nav-container">
       <div class="nav-icon-container"><NavIcons /></div>
-      <button>
-        <span><ContactIcon id="contact-icon" /></span>
-        <span>Contact Me</span>
-      </button>
+      <button><ContactIcon id="contact-icon" />Contact Me</button>
     </nav>
   </StyledCard>
 </template>
