@@ -95,7 +95,7 @@
   color: var(--md-sys-color-on-error-container);
 }
 .outline {
-  background-color: var(--md-sys-color-outline);
+  border: 2px solid var(--md-sys-color-outline);
 }
 .outline-text {
   color: var(--md-sys-color-outline);
@@ -115,6 +115,9 @@
 .surface {
   background-color: var(--md-sys-color-surface);
 }
+.surface.glass {
+  background-color: rgba(var(--md-sys-color-surface), .5);
+}
 .surface-text {
   color: var(--md-sys-color-surface);
 }
@@ -127,6 +130,9 @@
 .surface-variant {
   background-color: var(--md-sys-color-surface-variant);
 }
+.surface-variant.glass {
+  background-color: rgba(var(--md-sys-color-surface-variant), .5);
+}
 .surface-variant-text {
   color: var(--md-sys-color-surface-variant);
 }
@@ -138,6 +144,9 @@
 }
 .inverse-surface {
   background-color: var(--md-sys-color-inverse-surface);
+}
+.inverse-surface.glass {
+  background-color: rgba(var(--md-sys-color-inverse-surface), .5);
 }
 .inverse-surface-text {
   color: var(--md-sys-color-inverse-surface);
