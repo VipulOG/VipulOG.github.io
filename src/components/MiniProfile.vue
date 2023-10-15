@@ -11,7 +11,7 @@ const launchLinkedIn = () => window.open('https://www.linkedin.com/in/')
 </script>
 
 <template>
-  <StyledCard padding="l">
+  <StyledCard padding="l" glass-effect>
     <BulletHeader title="Undergraduate Student" style="gap: 0px" class="mb-12">
       <StyledCard scheme="primary-container" padding="s" class="row label-small">
         <p style="text-transform: uppercase">Available for Work</p>
