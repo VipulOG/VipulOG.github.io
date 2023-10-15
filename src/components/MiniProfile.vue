@@ -65,7 +65,7 @@ const launchLinkedIn = () => window.open('https://www.linkedin.com/in/')
 
 .image-container > img {
   border-radius: 50%;
-  height: -webkit-fill-available;
+  max-height: 100%;
   object-fit: cover;
 }
 
