@@ -33,14 +33,12 @@ const padding = computed(() => {
 const classes = computed(() => {
   const background = props.scheme
   const foreground = 'on-' + props.scheme + '-text'
-  let res = `${background} ${foreground}`
-  if (props.glassEffect) res += ' glass'
-  return res
+  return ["rounded-rect", background, foreground, props.glassEffect ? 'glass' : '']
 })
 </script>
 
 <template>
-  <div class="rounded-rect" :class="classes" :style="{ padding: padding }">
+  <div :class="classes" :style="{ padding: padding }">
     <slot />
   </div>
 </template>
