@@ -18,4 +18,5 @@ jobs:
       with:
         username: 'VipulOG'
         reponame: 'VipulOG.github.io'
+        cname: 'vipul.is-a.dev'
         token: ${{ secrets.GITHUB_TOKEN }}

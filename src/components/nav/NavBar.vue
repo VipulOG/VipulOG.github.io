@@ -8,7 +8,7 @@ import StyledCard from '../StyledCard.vue'
   <StyledCard padding="s">
     <nav class="nav-container">
       <div class="nav-icon-container"><NavIcons /></div>
-      <button><ContactIcon id="contact-icon" />Contact Me</button>
+      <button><ContactIcon class="contact-icon" />Contact Me</button>
     </nav>
   </StyledCard>
 </template>
@@ -25,7 +25,7 @@ import StyledCard from '../StyledCard.vue'
   gap: 10px;
 }
 
-#contact-icon {
+.contact-icon {
   width: 16px;
   height: 16px;
   margin-right: 6px;
