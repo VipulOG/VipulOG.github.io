@@ -24,10 +24,10 @@ import BlogIcon from '@/components/icons/IconBlog.vue'
       :class="{ selected: $route.name == 'works' }"
     />
   </RouterLink>
-  <RouterLink to="/Blogs" class="no-lh">
+  <RouterLink to="/writings" class="no-lh">
     <BlogIcon
       class="nav-icon on-surface-text rounded-rect"
-      :class="{ selected: $route.name == 'blogs' }"
+      :class="{ selected: $route.name == 'writings' }"
     />
   </RouterLink>
 </template>
