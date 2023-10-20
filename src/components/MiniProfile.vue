@@ -1,13 +1,15 @@
 <script setup>
-import GithubIcon from '@/components/icons/IconGithub.vue'
-import InstaIcon from '@/components/icons/IconInsta.vue'
-import LinkedInIcon from '@/components/icons/IconLinkedIn.vue'
+import GithubIcon from './icons/IconGithub.vue'
+import InstaIcon from './icons/IconInsta.vue'
+import LinkedInIcon from './icons/IconLinkedIn.vue'
+import LeetCodeIcon from './icons/IconLeetCode.vue'
 import StyledCard from './StyledCard.vue'
 import BulletHeader from './BulletHeader.vue'
 
 const launchGithub = () => window.open('https://github.com/VipulOG')
 const launchInsta = () => window.open('https://instagram.com/vipul.tyagii')
 const launchLinkedIn = () => window.open('https://www.linkedin.com/in/')
+const launchLeetCode = () => window.open('https://leetcode.com/VipulOG/')
 </script>
 
 <template>
@@ -39,6 +41,9 @@ const launchLinkedIn = () => window.open('https://www.linkedin.com/in/')
       </button>
       <button class="social-icon" @click="launchLinkedIn">
         <LinkedInIcon />
+      </button>
+      <button class="social-icon" @click="launchLeetCode">
+        <LeetCodeIcon />
       </button>
     </div>
   </StyledCard>
