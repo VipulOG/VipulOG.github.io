@@ -20,8 +20,8 @@ const router = createRouter({
       component: () => import('../views/InProgressView.vue')
     },
     {
-      path: '/blogs',
-      name: 'blogs',
+      path: '/writings',
+      name: 'writings',
       component: () => import('../views/InProgressView.vue')
     }
   ]
