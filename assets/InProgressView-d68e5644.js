@@ -1,0 +1,1 @@
+import{_ as s,o,c as _,p as c,a as t,b as a}from"./index-3f6937e1.js";const d={},n=e=>(c("data-v-b18de23b"),e=e(),t(),e),r={class:"wrapper"},p=n(()=>a("h1",null,"WIP",-1)),i=[p];function l(e,b){return o(),_("div",r,i)}const u=s(d,[["render",l],["__scopeId","data-v-b18de23b"]]);export{u as default};
