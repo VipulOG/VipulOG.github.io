@@ -1,0 +1,528 @@
+<head>
+  <meta charset="utf-8">
+  <title>Vipul Tyagi</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:300,700&amp;display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+  
+  <style>
+    *, *::before, *::after {
+       box-sizing: border-box;
+    }
+     html {
+         width: 100%;
+         height: 100%;
+         overflow: hidden;
+    }
+     body {
+         width: 100%;
+         height: 100%;
+         overflow: hidden;
+         background-color: #e8eaeb;
+         background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2IiBoZWlnaHQ9IjYiPgo8cmVjdCB3aWR0aD0iNiIgaGVpZ2h0PSI2IiBmaWxsPSIjZThlYWViIj48L3JlY3Q+CjxyZWN0IHdpZHRoPSI2IiBoZWlnaHQ9IjEiIGZpbGw9IiNlM2U1ZTYiPjwvcmVjdD4KPC9zdmc+');
+         --text-color: #4a4b4d;
+         color: var(--text-color);
+         font-family: Nunito, sans-serif;
+         -webkit-font-smoothing: antialiased;
+         -moz-osx-font-smoothing: grayscale;
+    }
+     body::after {
+         content: '';
+         position: absolute;
+         bottom: 13.6%;
+         right: 0;
+         display: block;
+         width: 25.1%;
+         border-top: 12px solid #58685E;
+    }
+     @media screen and (max-width: 900px) {
+         body::after {
+             border-top-width: 8px;
+        }
+    }
+     #main {
+         position: absolute;
+         left: 5.8%;
+         right: 5.8%;
+         bottom: 19.4%;
+    }
+     @media screen and (max-width: 900px) {
+         #main {
+             top: 26.4%;
+             left: 9.8%;
+             right: 9.8%;
+             bottom: auto;
+        }
+    }
+     #eye-catcher {
+         font-weight: 700;
+         font-size: 56px;
+         line-height: 1.5;
+         letter-spacing: -2px;
+         margin-bottom: 1.5em;
+         position: relative;
+         left: -3px;
+    }
+     @media screen and (max-width: 900px) {
+         #eye-catcher {
+             font-size: 40px;
+        }
+    }
+     p {
+         font-weight: 300;
+         font-size: 28px;
+         line-height: 1.5;
+         letter-spacing: -1px;
+    }
+     @media screen and (max-width: 900px) {
+         p {
+             font-size: 20px;
+             letter-spacing: -0.5px;
+        }
+    }
+     #doing-this-right-now {
+         transition: color 0.33s ease-in-out, text-shadow 0.33s ease-in-out;
+    }
+     .blurry {
+         --blur-color: rgb(from var(--text-color) r g b / 20%);
+         text-shadow: 2px 0 2px var(--blur-color), -2px 0 2px var(--blur-color), 3px 0 2px var(--blur-color), -3px 0 2px var(--blur-color);
+         color: transparent;
+    }
+     .yawning {
+         word-break: break-all;
+    }
+     .hard {
+         display: none;
+         opacity: 0;
+         transition: opacity 2s ease-out;
+    }
+     .hard-shown {
+         display: initial;
+    }
+     .hard-shown-2 {
+         opacity: 1;
+    }
+     .soft-hidden {
+         display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="main">
+    <div id="eye-catcher">oh, hi.</div>
+    <p>this is vipul tyagi.</p>
+    <p>
+      looking <span class="hard">really hard</span> for my personal website or
+      portfolio?&nbsp; i&rsquo;m lazy to refresh it.<br />
+      right now,&nbsp; i&rsquo;m probably <span class="hard">still</span> out
+      there <span id="doing-this-right-now"></span>.
+    </p>
+    <p>
+      or maybe <span class="hard">still</span>
+      <span class="soft">just</span> getting cozy in my comfy bed.
+      <span id="yawn"
+        >yawww<span id="yawning-w"></span>n<span id="yawning-n"></span></span
+      >.
+    </p>
+  </div>
+  
+  <script>
+    var $ = {
+      doingThisRightNow: document.querySelector('#doing-this-right-now'),
+      yawn: document.querySelector('#yawn'),
+      yawningW: document.querySelector('#yawning-w'),
+      yawningN: document.querySelector('#yawning-n'),
+    };
+    
+    var $$ = {
+      hard: document.querySelectorAll('.hard'),
+      soft: document.querySelectorAll('.soft'),
+    };
+    
+    function randomElement(enumerable) {
+      return enumerable[~~(enumerable.length * Math.random())];
+    }
+    
+    var thingsIAmDoing = [
+      'watching anime',
+      'working out',
+      'doing mindful meditation',
+      'messing around with a pet project',
+    ];
+    
+    function setThingIAmDoingText(thing) {
+      $.doingThisRightNow.textContent = thing;
+    }
+    
+    (function () {
+      setThingIAmDoingText(randomElement(thingsIAmDoing));
+    })();
+  </script>
+  <script>
+    function randomAt(avg, offset) {
+      return avg - offset + Math.random() * (offset * 2);
+    }
+    
+    function* range(stop) {
+      for (let i = 0; i < stop; i++) {
+        yield i;
+      }
+    }
+    
+    function repeat(count, getter) {
+      return Array.from(range(count)).map(getter).join('');
+    }
+    
+    async function animationFrame() {
+      return new Promise((resolve) => requestAnimationFrame(resolve));
+    }
+    
+    async function timeout(timeout) {
+      return new Promise((resolve) => setTimeout(resolve, timeout));
+    }
+    
+    (function () {
+      function shuffleThingsIAmDoingInterval() {
+        return randomAt(12, 4) * 1000;
+      }
+    
+      function initialShuffleThingsIAmDoingInterval() {
+        return randomAt(5, 1) * 1000;
+      }
+    
+      function thingsIAmDoingShuffleRuntime() {
+        return randomAt(3, 1) * 1000;
+      }
+    
+      function strDistance(a, b) {
+        const distance = Array.from(Array(b.length + 1).keys()).map((i) => [
+          i,
+        ]);
+        for (let j = 0; j <= b.length; j++) {
+          for (let i = 1; i <= a.length; i++) {
+            if (j === 0) {
+              distance[j][i] = i;
+            } else {
+              distance[j][i] = Math.min(
+                distance[j - 1][i] + 1,
+                distance[j][i - 1] + 1,
+                distance[j - 1][i - 1] + (a[i - 1] === b[j - 1] ? 0 : 1)
+              );
+            }
+          }
+        }
+        return distance[b.length][a.length];
+      }
+    
+      const ALPHABET = 'abcdefghijklmnopqrstuvwxyz ';
+    
+      function getProbabilityToStayAtCurrentStrDist(
+        targetLength,
+        currentRuntime,
+        availableRuntime
+      ) {
+        return (
+          0.05 *
+          Math.max(0, 1 - currentRuntime / availableRuntime) *
+          (50 / targetLength ** 2)
+        );
+      }
+    
+      async function* streamGibberish(from, to, runtime) {
+        const beginDistance = strDistance(from, to);
+    
+        let current = from;
+        let iterations = 0;
+    
+        const startTime = performance.now();
+    
+        while (current !== to) {
+          const prevCurrent = current;
+          const currentDist = strDistance(current, to);
+    
+          yield current;
+          await animationFrame();
+    
+          while (true) {
+            iterations++;
+    
+            if (currentDist === 1) {
+              current = to;
+              break;
+            }
+    
+            const del = () => {
+              const pos = ~~(Math.random() * current.length);
+              current =
+                current.substring(0, pos) + current.substring(pos + 1);
+            };
+    
+            const insert = () => {
+              const position = ~~(Math.random() * current.length);
+              const char =
+                position >= to.length ? to[to.length - 1] : to[position];
+              current =
+                current.substring(0, position) +
+                char +
+                current.substring(position);
+            };
+    
+            const replace = () => {
+              const position = ~~(Math.random() * current.length);
+              if (position >= to.length) {
+                current[position] =
+                  ALPHABET[~~(Math.random() * ALPHABET.length)];
+              } else {
+                current[position] = to[position];
+              }
+            };
+    
+            if (current.length <= to.length) insert();
+            if (~~(Math.random() * 2) === 0) insert();
+    
+            if (current.length >= to.length) del();
+            if (~~(Math.random() * 2) === 0) del();
+    
+            replace();
+            if (~~(Math.random() * 2) === 0) replace();
+    
+            const nextDist = strDistance(current, to);
+    
+            if (nextDist <= currentDist) {
+              break;
+            } else if (
+              nextDist - currentDist === 1 &&
+              nextDist < beginDistance &&
+              currentDist !== 1 &&
+              Math.random() <
+                getProbabilityToStayAtCurrentStrDist(
+                  to.length,
+                  performance.now() - startTime,
+                  runtime
+                )
+            ) {
+              break;
+            } else {
+              current = prevCurrent;
+            }
+          }
+        }
+      }
+    
+      async function gibberishifyThingIAmDoing(current, target) {
+        const runtime = thingsIAmDoingShuffleRuntime();
+    
+        for await (const gibberish of streamGibberish(
+          current,
+          target,
+          runtime
+        )) {
+          setThingIAmDoingText(gibberish);
+        }
+      }
+    
+      async function shuffleThingIAmDoing() {
+        const current = $.doingThisRightNow.textContent;
+        let target;
+    
+        do {
+          target = randomElement(thingsIAmDoing);
+        } while (target === current);
+    
+        $.doingThisRightNow.classList.add('blurry');
+        await gibberishifyThingIAmDoing(current, target);
+    
+        setThingIAmDoingText(target);
+        $.doingThisRightNow.classList.remove('blurry');
+    
+        setTimeout(shuffleThingIAmDoing, shuffleThingsIAmDoingInterval());
+      }
+    
+      setTimeout(
+        shuffleThingIAmDoing,
+        initialShuffleThingsIAmDoingInterval()
+      );
+    })();
+    
+    (function () {
+      function cubicBézier(t, p0, p1, p2, p3) {
+        return (
+          (1 - t) ** 3 * p0 +
+          3 * (1 - t) ** 2 * t * p1 +
+          3 * (1 - t) * t ** 2 * p2 +
+          t ** 3 * p3
+        );
+      }
+    
+      function yawnInterval() {
+        return randomAt(40, 10) * 1000;
+      }
+    
+      function yawnWLength() {
+        return ~~randomAt(12, 4);
+      }
+    
+      function yawnNLength() {
+        return ~~randomAt(3, 1);
+      }
+    
+      function yawnRuntime() {
+        return randomAt(2, 0.5) * 1000;
+      }
+    
+      function yawnHoldTime() {
+        return randomAt(1, 0.5) * 1000;
+      }
+    
+      async function* streamYawnLengths(
+        runtime,
+        fromWLength,
+        toWLength,
+        fromNLength,
+        toNLength
+      ) {
+        const start = performance.now();
+    
+        while (performance.now() - start <= runtime) {
+          const t = Math.min(1, (performance.now() - start) / runtime);
+          const b = cubicBézier(t, 0.08, 0.11, 0.26, 1);
+    
+          const wLength = Math.round(
+            b * (toWLength - fromWLength) + fromWLength
+          );
+          const nLength = Math.round(
+            b * (toNLength - fromNLength) + fromNLength
+          );
+    
+          yield [wLength, nLength];
+          await animationFrame();
+        }
+      }
+    
+      async function yawn(
+        runtime,
+        fromWLength,
+        toWLength,
+        fromNLength,
+        toNLength
+      ) {
+        for await (const [wLength, nLength] of streamYawnLengths(
+          runtime,
+          fromWLength,
+          toWLength,
+          fromNLength,
+          toNLength
+        )) {
+          $.yawningW.textContent = repeat(wLength, () => 'w');
+          $.yawningN.textContent = repeat(nLength, () => 'n');
+        }
+    
+        $.yawningW.textContent = repeat(toWLength, () => 'w');
+        $.yawningN.textContent = repeat(toNLength, () => 'n');
+      }
+    
+      async function fullYawn() {
+        const targetWLength = yawnWLength();
+        const targetNLength = yawnNLength();
+        const inRuntime = yawnRuntime();
+        const outRuntime = yawnRuntime();
+    
+        $.yawn.classList.add('yawning');
+        await yawn(inRuntime, 0, targetWLength, 0, targetNLength);
+        await timeout(yawnHoldTime());
+        await yawn(outRuntime, targetWLength, 0, targetNLength, 0);
+        $.yawn.classList.remove('yawning');
+    
+        setTimeout(fullYawn, yawnInterval());
+      }
+    
+      setTimeout(fullYawn, yawnInterval());
+    })();
+    
+    (function () {
+      let totalDistanceX = 0;
+      let totalDistanceY = 0;
+    
+      let lastTouchX;
+      let lastTouchY;
+    
+      const EVENT_LISTENER_OPTIONS = {
+        capture: true,
+        passive: true,
+      };
+    
+      function onWheel({ deltaX, deltaY, deltaMode }) {
+        const deltaXMultiplier = [1, 24, window.innerWidth][deltaMode];
+        const deltaYMultiplier = [1, 24, window.innerHeight][deltaMode];
+    
+        totalDistanceX += deltaX * deltaXMultiplier;
+        totalDistanceY += deltaY * deltaYMultiplier;
+    
+        checkTotalDistance();
+      }
+    
+      function onTouchStart({ touches: [{ clientX, clientY }] }) {
+        lastTouchX = clientX;
+        lastTouchY = clientY;
+      }
+    
+      function onTouchMove({ touches: [{ clientX, clientY }] }) {
+        // No inertia, so have some multiplier
+        totalDistanceX += (lastTouchX - clientX) * 6;
+        totalDistanceY += (lastTouchY - clientY) * 6;
+    
+        lastTouchX = clientX;
+        lastTouchY = clientY;
+    
+        checkTotalDistance();
+      }
+    
+      window.addEventListener('wheel', onWheel, EVENT_LISTENER_OPTIONS);
+      window.addEventListener(
+        'touchstart',
+        onTouchStart,
+        EVENT_LISTENER_OPTIONS
+      );
+      window.addEventListener(
+        'touchmove',
+        onTouchMove,
+        EVENT_LISTENER_OPTIONS
+      );
+    
+      async function checkTotalDistance() {
+        if (
+          totalDistanceX < window.innerWidth * 2 &&
+          totalDistanceY < window.innerHeight * 2
+        )
+          return;
+    
+        window.removeEventListener('wheel', onWheel, EVENT_LISTENER_OPTIONS);
+        window.removeEventListener(
+          'touchstart',
+          onTouchStart,
+          EVENT_LISTENER_OPTIONS
+        );
+        window.removeEventListener(
+          'touchmove',
+          onTouchMove,
+          EVENT_LISTENER_OPTIONS
+        );
+    
+        for (const elem of $$.soft) {
+          elem.classList.add('soft-hidden');
+        }
+    
+        for (const elem of $$.hard) {
+          elem.classList.add('hard-shown');
+        }
+    
+        await timeout(100);
+    
+        for (const elem of $$.hard) {
+          elem.classList.add('hard-shown-2');
+        }
+      }
+    })();
+  </script>
+</body>
